@@ -1,0 +1,118 @@
+\usepackage{amsmath,
+amsfonts,
+amssymb,
+amsthm,
+epstopdf,
+epigraph,
+yfonts,
+xcolor,
+graphicx,
+dsfont,
+newlfont,
+listings,
+color,
+booktabs,	
+subfiles,
+lmodern,
+titlesec,
+tikz,
+thmtools,
+stmaryrd,
+lipsum,
+textcase,
+setspace,
+hyperref,
+marginnote}
+\usepackage{nicefrac}
+\usepackage{EuScript}
+\usepackage{fourier, palatino}
+\newtheoremstyle{custom-up}% name of the style to be used
+{1pt}% measure of space to leave above the theorem. E.g.: 3pt
+{1pt}% measure of space to leave below the theorem. E.g.: 3pt
+{}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{}% name of head font
+{}% punctuation between head and body
+{2pt}% space after theorem head; " " = normal interword space
+{\llap{{\small\textcolor{black}{\textbf{\thmnumber{#2}}}}\hskip2mm}\textbf{\thmname{#1}}\hskip1mm\thmnote{(#3)}}%
+\theoremstyle{custom-up}
+\newtheorem*{axiom}{Assioma}
+\newtheorem*{question}{Domanda}
+\newtheorem*{exercise}{Esercizio}
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{theorem}[definition]{Teorema}
+\newtheorem{corollary}[definition]{Corollario} 
+\newtheorem{lemma}[definition]{Lemma} 
+\newtheorem{proposition}[definition]{Proposizione}
+\newtheorem{example}[definition]{Esempio}
+\newtheorem{remark}[definition]{Osservazione}
+\newtheorem{claim}[definition]{Claim}
+\newtheorem*{theorem*}{Theorem}
+
+	\newcommand{\bb}[1]{\mathds{#1}}
+	\newcommand{\fk}[1]{\mathfrak{#1}}
+	\newcommand{\sff}[1]{\mathsf{#1}}
+	\newcommand{\cl}[1]{\EuScript{#1}}
+	\newcommand{\comp}[1]{#1^{\mathsf{c}}}
+	\renewcommand{\P}{\cl{P}}
+	\newcommand{\finset}[1]{\cl{P}_{\mathsf{fin}}(#1)}
+	\newcommand{\struct}[1]{\mathds{#1}} % use this for "famous" sets and the like
+	\newcommand{\sm}{\smallsetminus}
+	\newcommand{\quot}[2]{{#1}/{#2}}
+	\newcommand{\wt}[1]{\widetilde{#1}}
+	\newcommand{\into}{\hookrightarrow}
+	\newcommand{\then}{\rightarrow}
+	\newcommand{\meet}{\land}
+	\newcommand{\join}{\lor}
+	\newcommand{\onto}{\twoheadrightarrow}
+	\newcommand{\NN}{\struct{N}}
+	\newcommand{\QQ}{\struct{Q}}
+	\newcommand{\ZZ}{\struct{Z}}
+	\newcommand{\RR}{\struct{R}}
+	\newcommand{\PP}{\struct{P}}
+	\newcommand{\CC}{\struct{C}}
+	\renewcommand{\AA}{\struct{A}}
+	\newcommand{\KK}{\struct{K}}
+	\newcommand{\Q}[1]{\struct{Q}_{#1}}
+	\newcommand{\Z}[1]{\struct{Z}_{#1}}
+	\renewcommand{\SS}{\struct{S}}
+	\newcommand{\U}{\cl{U}}
+	\newcommand{\V}{\cl{V}}
+	\newcommand{\W}{\cl{W}}
+	\newcommand{\A}{\cl{A}}
+	\newcommand{\M}{\cl{M}}
+	\newcommand{\N}{\cl{N}}
+	\newcommand{\B}{\cl{B}}
+	\newcommand{\X}{\cl{X}}
+	\newcommand{\Y}{\cl{Y}}
+	\renewcommand{\Z}{\cl{Z}}
+	\newcommand{\G}{\cl{G}}
+	\newcommand{\F}{\mathcal{F}}
+	\newcommand{\Gg}{\mathfrak{G}}
+	\renewcommand{\O}{\cl{O}}
+	\renewcommand{\L}{\cl{L}}
+	\renewcommand{\emph}[1]{\textbf{#1}}
+	\renewcommand{\geq}{\geqslant}
+	\renewcommand{\leq}{\leqslant}
+	\renewcommand{\epsilon}{\varepsilon}
+	\newcommand{\interior}[1]{{#1}^{\circ}}
+	\newcommand{\satisfies}{\vDash}
+	\newcommand{\follows}{\vdash}
+	\newcommand{\de}{\partial}
+	\newcommand{\cinf}{\cl{C}^{\infty}}
+	\newcommand{\Man}{\textsf{Man}}
+	\newcommand{\isom}{\xrightarrow{\cong}}
+	\newcommand{\define}{\hskip1mm\dot{=}\hskip1mm}
+	\renewcommand{\o}{\mathbf{0}}
+	\newcommand{\MK}{\mathsf{MK}}
+	\newcommand{\Ord}{\mathrm{Ord}}
+	\newcommand{\Card}{\mathrm{Card}}
+	\newcommand{\ot}{\mathrm{ot}}
+	\newcommand{\ran}{\mathrm{ran}}
+	\newcommand{\dom}{\mathrm{dom}}
+	\newcommand{\rank}{\mathrm{rank}}
+	\newcommand{\AC}{\mathrm{AC}}
+	\newcommand{\cof}{\mathrm{cof}}
+	\newcommand{\ar}{\mathrm{ar}}
+	\newcommand{\ClF}{\mathrm{Cl}_{\F}}
+	\newcommand{\C}{\mathbf{C}}

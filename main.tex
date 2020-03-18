@@ -1,0 +1,103 @@
+\documentclass[twoside,openright,titlepage,numbers=noenddot,%1headlines,
+               headinclude,footinclude,cleardoublepage=empty,abstract=on,
+               BCOR=23mm,paper=letter,fontsize=11pt
+               ]{scrreprt}
+\input{classicthesis-config}
+\input{base.tex}
+\title{Geometria Algebrica 1920}
+\author{Simone Ramello}
+\date{\today} 
+\begin{document}
+\maketitle
+\chapter{Irriducibilità e dimensione}
+\section{Richiami da Istituzioni}
+Fissiamo un campo $k$ algebricamente chiuso. Con il termine ``varietà'' indicheremo una \textbf{varietà quasi proiettiva}, ovvero un sottospazio localmente chiuso\footnote{Vale a dire, un sottospazio aperto nella propria chiusura.} di $\PP^n$. Estendiamo un po' la nomenclatura: diremo che una varietà è \textbf{affine} se è isomorfa ad un chiuso $X \subseteq \AA^n$. Esempi canonici sono tutti i chiusi affini e, in maniera meno ovvia, ogni aperto principale di una varietà affine. Diremo \textbf{aperto affine} per indicare un aperto di una varietà che, visto a sua volta come varietà, è affine.
+\begin{remark}
+    Gli aperti affini costituiscono una base per la topologia di Zariski di una varietà $X$. Infatti, posso decomporre $X$ lungo le \textbf{carte affini}
+    \[ U_i := \{(x_0: \dots :x_n) \in \PP^n: x_i \neq 0\} \]
+    che ricoprono $\PP^n$ nel modo seguente,
+    \[ X = \bigcup_{i=0}^{n} X\cap U_i \]
+    e indicate con $X_i := X \cap U_i$, questi ultimi sono localmente chiusi in $U_i$. Ciascuno di essi può dunque essere scritto come unione di aperti principali (che sappiamo costituire una base per la topologia di ciascuna varietà), che sono a loro volta aperti affini.
+\end{remark}
+\begin{exercise}
+    Mostrare che
+    \begin{enumerate}
+        \item un chiuso di una varietà affine è una varietà affine,
+        \item il prodotto di varietà affini è una varietà affine,
+        \item l'intersezione di aperti affini è un aperto affine.
+    \end{enumerate}
+\end{exercise}
+\subsection{Funzioni regolari e morfismi}
+\begin{definition}
+    Se $X$ è una varietà e $f: X \to k$, diremo che $f$ è \textbf{regolare} se è localmente quoziente di due polinomi omogenei del medesimo grado a denominatore non-nullo; se $X \subseteq U_i$ per qualche $i$, in particolare, sarà regolare se è localmente quoziente di polinomi a denominatore non-nullo.
+\end{definition}
+\begin{definition}
+    Indichiamo con $\O(X)$ la $k$-algebra delle funzioni regolari su $X$. Nel caso in cui $X$ sia affine, scriveremo anche $k[X]$.
+\end{definition}
+\begin{remark}
+    Se $X$ è affine, si ha $\O(X) \cong \frac{k[x_1, \dots x_n]}{I(X)}$, dove $I(X)$ è l'ideale dei polinomi che si annullano su $X$. Se $X$ è proiettiva e connessa, $\O(X) \cong k$.
+\end{remark}
+\subsection{Irriducibilità}
+\begin{definition}
+    Uno spazio topologico $X$ si dice \textbf{irriducibile} se \textit{non} esistono due chiusi $C_1, C_2 \subsetneq X$ non-vuoti tali che $X = C_1 \cup C_2$.
+\end{definition}
+\begin{exercise}
+    Se $X$ è uno spazio topologico non vuoto sono equivalenti
+    \begin{enumerate}
+        \item $X$ irriducibile,
+        \item ogni coppia di aperti non vuoti ha intersezione non vuota,
+        \item ogni aperto non vuoto è denso in $X$.
+    \end{enumerate}
+    Inoltre, se $Y \subseteq X$ è denso, allora $X$ irriducibile $\iff Y$ irriducibile.
+\end{exercise}
+\subsection{Conseguenze del Nullstellensatz}
+Ricordiamo che il Nullstellensatz fornisce una biezione fra i chiusi di una varietà affine $X$ e gli ideali radicali di $k[x_1, \dots x_n]$ che contengono $I(X)$. Questa biezione si compone con la proiezione al quoziente fornendo una biezione fra i chiusi di $X$ e gli ideali radicali di $k[X]$. L'ultima biezione si può anche scrivere direttamente: se $Y \subseteq X$, indichiamo con $I_{X}(Y) = \{f \in k[X]: f\vert_{Y} \equiv 0\}$.
+\begin{center}
+    Finire richiami!
+\end{center}
+\section{Dimensione topologica}
+Sia $X$ uno spazio topologico; tenendo a mente il modello degli spazi noetheriani, indichiamo con
+\begin{align*} 
+    \dim(X) := \sup \{n \in \NN:& \ \text{esiste una catena di chiusi non vuoti irriducibili}\\ \ &Z_0 \subsetneq Z_1 \subsetneq Z_2 \subsetneq \dots \subsetneq Z_n \subseteq X\}
+\end{align*}
+la \textbf{dimensione (topologica) di $X$}.
+\begin{example}
+    Se $\# X = 1$, $\dim(X) = 0$. Similmente, siccome in $\AA^1$ gli unici chiusi irriducibili sono $\AA^1$ e i punti, le catene massimali hanno tutte la forma
+    \[ \{\star\} \subseteq \AA^1, \]
+    da cui $\dim(\AA^1) = 1$. In generale, mostrare che $\AA^n$ e $\PP^n$ hanno dimensione $n$ è molto più complicato, e ci vorrà un po' di lavoro.
+\end{example}
+\begin{remark}
+    Contrariamente all'intuizione, non tutti gli spazi noetheriani hanno dimensione finita. Se ad esempio si considera $[0,1]$ con i chiusi della forma $Z_n := [-\frac{1}{n}, 1]$, questo spazio risulta noetheriano (soddisfa la condizione catenaria \textit{discendente}) ma ha dimensione infinita (non soddisfa quella \textit{ascendente}).
+\end{remark}
+\begin{proposition}
+    Sia $X$ uno spazio topologico, allora:
+    \begin{enumerate}
+        \item $Y \subseteq X$ implica che $\dim(Y) \leq \dim(X)$,
+        \item se $X$ è noetheriano e $X = X_1 \cup \dots \cup X_r$ è la sua decomposizione in irriducibili, allora
+        \[ \dim(X) = \max_{i\leq r}\dim(X_i), \]
+        \item se $X$ è irriducibile e ha dimensione finita, allora $Y \subsetneq X$ implica $\dim(Y) < \dim(X)$,
+        \item se $X$ è noetheriano di dimensione finita e $Y \subseteq X$ è chiuso e ha la stessa dimensione dello spazio ambiente, allora $Y$ contiene una componente irriducibile di dimensione $\dim(X)$,
+        \item se $\{U_\alpha\}_{\alpha \in A}$ è un ricoprimento aperto di $X$,
+        \[ \dim(X) = \sup_{\alpha \in A} \dim(U_\alpha). \]
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Mostriamo $(1)$, gli altri sono esercizi. Siano
+    \[ Z_0 \subsetneq Z_1 \subsetneq Z_2 \subsetneq \dots \subsetneq Z_n \subseteq Y \]
+    chiusi irriducibili non vuoti, allora\footnote{Ovviamente la chiusura è in $X$.}
+    \[ \overline{Z_0} \subsetneq \overline{Z_1} \subsetneq \dots \subsetneq \overline{Z_n} \subseteq X \]
+    sono chiusi irriducibili non vuoti di $X$. Passando al limite, $\dim(X) \geq \dim(Y)$.
+\end{proof}
+\begin{definition}
+    Diciamo che $X$ è \textbf{equidimensionale}, o che ha dimensione pura, se ogni componente irriducibile ha la stessa dimensione.
+\end{definition}
+\begin{remark}
+    Se $X$ ha dimensione $n$, come testimoniato da
+    \[ Z_0 \subsetneq Z_1 \subsetneq \dots \subsetneq Z_n \subseteq X, \]
+    allora $\dim(Z_i) = i$ per ogni $i = 0, \dots n$. Ne consegue che $X$ è irriducibile se e solo se $X = Z_n$ (altrimenti potrei allungare la catena). Si noti che se $X$ è almeno $T_1$ (come nel caso di Zariski), $\#Z_0 = 1$ (perché altrimenti potrei allungare la catena).
+\end{remark}
+\begin{example}
+    In generale non è vero\footnote{Lo sarà per varietà.} che la dimensione di un aperto denso corrisponda a quella dello spazio ambiente; se ad esempio si considera $[0,1]$ con la topologia $\{\emptyset, X, \{1\}\}$, allora risulta avere dimensione $1$ ma $\dim \{1\} = 0$, nonostante quest'ultimo sia denso.
+\end{example}
+Quando parleremo di \textbf{dimensione di una varietà} intenderemo sempre la sua dimensione topologica con la topologia di Zariski.
+\end{document}
